@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table
 public class Users {
     @Id
-    @SequenceGenerator(name= "users_sequence", sequenceName = "users_sequence", allocationSize = 1)
 
     private int userID;
     private String username;
