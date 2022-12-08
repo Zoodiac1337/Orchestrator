@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table
 public class Users {
     @Id
-
     private int userID;
     private String username;
     private String password;
@@ -41,11 +40,6 @@ public class Users {
     }
 
     public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Users(String username, String password) {
-        this.username = username;
         this.password = password;
     }
 
