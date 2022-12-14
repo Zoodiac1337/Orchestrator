@@ -1,28 +1,59 @@
 package com.example.Orchestrator.weather;
 
-public class Astro {
-    private String sunrise;
-    private String sunset;
-    private String moonrise;
-    private String moonset;
-    private String moonPhase;
-    private String moonIllumination;
+public class Astro{
+    public String sunrise;
+    public String sunset;
+    public String moonrise;
+    public String moonset;
+    public String moon_phase;
+    public String moon_illumination;
 
-    public String getSunrise() { return sunrise; }
-    public void setSunrise(String value) { this.sunrise = value; }
+    //Getters and setters
+    public String getSunrise() {
+        return sunrise;
+    }
 
-    public String getSunset() { return sunset; }
-    public void setSunset(String value) { this.sunset = value; }
+    public void setSunrise(String sunrise) {
+        this.sunrise = sunrise;
+    }
 
-    public String getMoonrise() { return moonrise; }
-    public void setMoonrise(String value) { this.moonrise = value; }
+    public String getSunset() {
+        return sunset;
+    }
 
-    public String getMoonset() { return moonset; }
-    public void setMoonset(String value) { this.moonset = value; }
+    public void setSunset(String sunset) {
+        this.sunset = sunset;
+    }
 
-    public String getMoonPhase() { return moonPhase; }
-    public void setMoonPhase(String value) { this.moonPhase = value; }
+    public String getMoonrise() {
+        return moonrise;
+    }
 
-    public String getMoonIllumination() { return moonIllumination; }
-    public void setMoonIllumination(String value) { this.moonIllumination = value; }
+    public void setMoonrise(String moonrise) {
+        this.moonrise = moonrise;
+    }
+
+    public String getMoonset() {
+        return moonset;
+    }
+
+    public void setMoonset(String moonset) {
+        this.moonset = moonset;
+    }
+
+    public String getMoon_phase() {
+        return moon_phase;
+    }
+
+    public void setMoon_phase(String moon_phase) {
+        this.moon_phase = moon_phase;
+    }
+
+    public String getMoon_illumination() {
+        return moon_illumination;
+    }
+
+    public void setMoon_illumination(String moon_illumination) {
+        this.moon_illumination = moon_illumination;
+    }
 }

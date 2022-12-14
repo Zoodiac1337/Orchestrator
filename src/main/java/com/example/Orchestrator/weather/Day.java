@@ -1,64 +1,142 @@
 package com.example.Orchestrator.weather;
 
-public class Day {
-    private double maxtempC;
-    private double maxtempF;
-    private double mintempC;
-    private double mintempF;
-    private double avgtempC;
-    private double avgtempF;
-    private double maxwindMph;
-    private double maxwindKph;
-    private double totalprecipMm;
-    private double totalprecipIn;
-    private double avgvisKM;
-    private double avgvisMiles;
-    private double avghumidity;
-    private Condition condition;
-    private double uv;
+public class Day{
+    public double maxtemp_c;
+    public double maxtemp_f;
+    public double mintemp_c;
+    public double mintemp_f;
+    public double avgtemp_c;
+    public double avgtemp_f;
+    public double maxwind_mph;
+    public double maxwind_kph;
+    public double totalprecip_mm;
+    public double totalprecip_in;
+    public double avgvis_km;
+    public double avgvis_miles;
+    public double avghumidity;
+    public Condition condition;
+    public double uv;
 
-    public double getMaxtempC() { return maxtempC; }
-    public void setMaxtempC(double value) { this.maxtempC = value; }
+    //Getters and setters
 
-    public double getMaxtempF() { return maxtempF; }
-    public void setMaxtempF(double value) { this.maxtempF = value; }
 
-    public double getMintempC() { return mintempC; }
-    public void setMintempC(double value) { this.mintempC = value; }
+    public double getMaxtemp_c() {
+        return maxtemp_c;
+    }
 
-    public double getMintempF() { return mintempF; }
-    public void setMintempF(double value) { this.mintempF = value; }
+    public void setMaxtemp_c(double maxtemp_c) {
+        this.maxtemp_c = maxtemp_c;
+    }
 
-    public double getAvgtempC() { return avgtempC; }
-    public void setAvgtempC(double value) { this.avgtempC = value; }
+    public double getMaxtemp_f() {
+        return maxtemp_f;
+    }
 
-    public double getAvgtempF() { return avgtempF; }
-    public void setAvgtempF(double value) { this.avgtempF = value; }
+    public void setMaxtemp_f(double maxtemp_f) {
+        this.maxtemp_f = maxtemp_f;
+    }
 
-    public double getMaxwindMph() { return maxwindMph; }
-    public void setMaxwindMph(double value) { this.maxwindMph = value; }
+    public double getMintemp_c() {
+        return mintemp_c;
+    }
 
-    public double getMaxwindKph() { return maxwindKph; }
-    public void setMaxwindKph(double value) { this.maxwindKph = value; }
+    public void setMintemp_c(double mintemp_c) {
+        this.mintemp_c = mintemp_c;
+    }
 
-    public double getTotalprecipMm() { return totalprecipMm; }
-    public void setTotalprecipMm(double value) { this.totalprecipMm = value; }
+    public double getMintemp_f() {
+        return mintemp_f;
+    }
 
-    public double getTotalprecipIn() { return totalprecipIn; }
-    public void setTotalprecipIn(double value) { this.totalprecipIn = value; }
+    public void setMintemp_f(double mintemp_f) {
+        this.mintemp_f = mintemp_f;
+    }
 
-    public double getAvgvisKM() { return avgvisKM; }
-    public void setAvgvisKM(double value) { this.avgvisKM = value; }
+    public double getAvgtemp_c() {
+        return avgtemp_c;
+    }
 
-    public double getAvgvisMiles() { return avgvisMiles; }
-    public void setAvgvisMiles(double value) { this.avgvisMiles = value; }
+    public void setAvgtemp_c(double avgtemp_c) {
+        this.avgtemp_c = avgtemp_c;
+    }
 
-    public double getAvghumidity() { return avghumidity; }
-    public void setAvghumidity(double value) { this.avghumidity = value; }
+    public double getAvgtemp_f() {
+        return avgtemp_f;
+    }
 
-    public Condition getCondition() { return condition; }
-    public void setCondition(Condition value) { this.condition = value; }
+    public void setAvgtemp_f(double avgtemp_f) {
+        this.avgtemp_f = avgtemp_f;
+    }
 
-    public double getUv() { return uv; }
-    public void setUv(double value) { this.uv = value; }
+    public double getMaxwind_mph() {
+        return maxwind_mph;
+    }
+
+    public void setMaxwind_mph(double maxwind_mph) {
+        this.maxwind_mph = maxwind_mph;
+    }
+
+    public double getMaxwind_kph() {
+        return maxwind_kph;
+    }
+
+    public void setMaxwind_kph(double maxwind_kph) {
+        this.maxwind_kph = maxwind_kph;
+    }
+
+    public double getTotalprecip_mm() {
+        return totalprecip_mm;
+    }
+
+    public void setTotalprecip_mm(double totalprecip_mm) {
+        this.totalprecip_mm = totalprecip_mm;
+    }
+
+    public double getTotalprecip_in() {
+        return totalprecip_in;
+    }
+
+    public void setTotalprecip_in(double totalprecip_in) {
+        this.totalprecip_in = totalprecip_in;
+    }
+
+    public double getAvgvis_km() {
+        return avgvis_km;
+    }
+
+    public void setAvgvis_km(double avgvis_km) {
+        this.avgvis_km = avgvis_km;
+    }
+
+    public double getAvgvis_miles() {
+        return avgvis_miles;
+    }
+
+    public void setAvgvis_miles(double avgvis_miles) {
+        this.avgvis_miles = avgvis_miles;
+    }
+
+    public double getAvghumidity() {
+        return avghumidity;
+    }
+
+    public void setAvghumidity(double avghumidity) {
+        this.avghumidity = avghumidity;
+    }
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public void setCondition(Condition condition) {
+        this.condition = condition;
+    }
+
+    public double getUv() {
+        return uv;
+    }
+
+    public void setUv(double uv) {
+        this.uv = uv;
+    }
 }

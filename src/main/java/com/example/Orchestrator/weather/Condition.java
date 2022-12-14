@@ -1,16 +1,32 @@
 package com.example.Orchestrator.weather;
 
-public class Condition {
-    private String text;
-    private String icon;
-    private long code;
+public class Condition{
+    public String text;
+    public String icon;
+    public int code;
 
-    public String getText() { return text; }
-    public void setText(String value) { this.text = value; }
+    //Getters and setters
+    public String getText() {
+        return text;
+    }
 
-    public String getIcon() { return icon; }
-    public void setIcon(String value) { this.icon = value; }
+    public void setText(String text) {
+        this.text = text;
+    }
 
-    public long getCode() { return code; }
-    public void setCode(long value) { this.code = value; }
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
 }

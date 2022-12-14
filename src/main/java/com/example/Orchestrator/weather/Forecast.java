@@ -1,8 +1,16 @@
 package com.example.Orchestrator.weather;
 
-public class Forecast {
-    private Forecastday[] forecastday;
+import java.util.ArrayList;
 
-    public Forecastday[] getForecastday() { return forecastday; }
-    public void setForecastday(Forecastday[] value) { this.forecastday = value; }
+public class Forecast{
+    public ArrayList<Forecastday> forecastday;
+
+    //Getters and setters
+    public ArrayList<Forecastday> getForecastday() {
+        return forecastday;
+    }
+
+    public void setForecastday(ArrayList<Forecastday> forecastday) {
+        this.forecastday = forecastday;
+    }
 }

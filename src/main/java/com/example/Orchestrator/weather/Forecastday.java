@@ -1,26 +1,52 @@
 package com.example.Orchestrator.weather;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Forecastday {
-    private LocalDate date;
-    private long dateEpoch;
-    private Day day;
-    private Astro astro;
-    private Hour[] hour;
+public class Forecastday{
+    public String date;
+    public int date_epoch;
+    public Day day;
+    public Astro astro;
+    public ArrayList<Hour> hour;
 
-    public LocalDate getDate() { return date; }
-    public void setDate(LocalDate value) { this.date = value; }
+    //Getters and setters
+    public String getDate() {
+        return date;
+    }
 
-    public long getDateEpoch() { return dateEpoch; }
-    public void setDateEpoch(long value) { this.dateEpoch = value; }
+    public void setDate(String date) {
+        this.date = date;
+    }
 
-    public Day getDay() { return day; }
-    public void setDay(Day value) { this.day = value; }
+    public int getDate_epoch() {
+        return date_epoch;
+    }
 
-    public Astro getAstro() { return astro; }
-    public void setAstro(Astro value) { this.astro = value; }
+    public void setDate_epoch(int date_epoch) {
+        this.date_epoch = date_epoch;
+    }
 
-    public Hour[] getHour() { return hour; }
-    public void setHour(Hour[] value) { this.hour = value; }
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
+    }
+
+    public Astro getAstro() {
+        return astro;
+    }
+
+    public void setAstro(Astro astro) {
+        this.astro = astro;
+    }
+
+    public ArrayList<Hour> getHour() {
+        return hour;
+    }
+
+    public void setHour(ArrayList<Hour> hour) {
+        this.hour = hour;
+    }
 }

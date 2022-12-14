@@ -1,5 +1,6 @@
 package com.example.Orchestrator.main;
 
+import com.example.Orchestrator.random.RandomNumber;
 import com.example.Orchestrator.trips.Trips;
 import com.example.Orchestrator.trips.TripsRepository;
 import com.example.Orchestrator.users.Users;
@@ -17,8 +18,8 @@ public class Config {
     @Bean
     CommandLineRunner commandLineRunnerUsers(UsersRepository repository) {
         return args -> {
-            Users root = new Users(1234567,"root","root");
-            Users user = new Users(1239876,"user","user");
+            Users root = new Users(12345,"root","root");
+            Users user = new Users(12376,"user","user");
             repository.saveAll(List.of(root, user));
         };
     }
@@ -26,8 +27,8 @@ public class Config {
     @Bean
     CommandLineRunner commandLineRunnerTrips(TripsRepository repository) {
         return args -> {
-            Trips trip1 = new Trips(1234567890, 1234567, "Nottingham", LocalDate.of(2022, 12, 10));
-            Trips trip2 = new Trips(998765321, 1239876, "Birmingham", LocalDate.of(2023, 1, 15));
+            Trips trip1 = new Trips(RandomNumber.getRandomNumber(1000000, 9999999), 12345, "Nottingham", LocalDate.of(2022, 12, 10));
+            Trips trip2 = new Trips(RandomNumber.getRandomNumber(1000000, 9999999), 12376, "Birmingham", LocalDate.of(2023, 1, 15));
             repository.saveAll(List.of(trip1, trip2));
         };
     }

@@ -1,6 +1,9 @@
 package com.example.Orchestrator.trips;
+
+import com.example.Orchestrator.weather.*;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+
 
 @Entity
 @Table

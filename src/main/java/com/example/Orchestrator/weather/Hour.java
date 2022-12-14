@@ -1,132 +1,293 @@
 package com.example.Orchestrator.weather;
 
-public class Hour {
-    private long timeEpoch;
-    private String time;
-    private double tempC;
-    private double tempF;
-    private long isDay;
-    private Condition condition;
-    private double windMph;
-    private double windKph;
-    private long windDegree;
-    private String windDir;
-    private double pressureMB;
-    private double pressureIn;
-    private double precipMm;
-    private double precipIn;
-    private long humidity;
-    private long cloud;
-    private double feelslikeC;
-    private double feelslikeF;
-    private double windchillC;
-    private double windchillF;
-    private double heatindexC;
-    private double heatindexF;
-    private double dewpointC;
-    private double dewpointF;
-    private long willItRain;
-    private long chanceOfRain;
-    private long willItSnow;
-    private long chanceOfSnow;
-    private double visKM;
-    private double visMiles;
-    private double gustMph;
-    private double gustKph;
+public class Hour{
+    public int time_epoch;
+    public String time;
+    public double temp_c;
+    public double temp_f;
+    public int is_day;
+    public Condition condition;
+    public double wind_mph;
+    public double wind_kph;
+    public int wind_degree;
+    public String wind_dir;
+    public double pressure_mb;
+    public double pressure_in;
+    public double precip_mm;
+    public double precip_in;
+    public int humidity;
+    public int cloud;
+    public double feelslike_c;
+    public double feelslike_f;
+    public double windchill_c;
+    public double windchill_f;
+    public double heatindex_c;
+    public double heatindex_f;
+    public double dewpoint_c;
+    public double dewpoint_f;
+    public int will_it_rain;
+    public int chance_of_rain;
+    public int will_it_snow;
+    public int chance_of_snow;
+    public double vis_km;
+    public double vis_miles;
+    public double gust_mph;
+    public double gust_kph;
 
-    public long getTimeEpoch() { return timeEpoch; }
-    public void setTimeEpoch(long value) { this.timeEpoch = value; }
+    //Getters and setters
+    public int getTime_epoch() {
+        return time_epoch;
+    }
 
-    public String getTime() { return time; }
-    public void setTime(String value) { this.time = value; }
+    public void setTime_epoch(int time_epoch) {
+        this.time_epoch = time_epoch;
+    }
 
-    public double getTempC() { return tempC; }
-    public void setTempC(double value) { this.tempC = value; }
+    public String getTime() {
+        return time;
+    }
 
-    public double getTempF() { return tempF; }
-    public void setTempF(double value) { this.tempF = value; }
+    public void setTime(String time) {
+        this.time = time;
+    }
 
-    public long getIsDay() { return isDay; }
-    public void setIsDay(long value) { this.isDay = value; }
+    public double getTemp_c() {
+        return temp_c;
+    }
 
-    public Condition getCondition() { return condition; }
-    public void setCondition(Condition value) { this.condition = value; }
+    public void setTemp_c(double temp_c) {
+        this.temp_c = temp_c;
+    }
 
-    public double getWindMph() { return windMph; }
-    public void setWindMph(double value) { this.windMph = value; }
+    public double getTemp_f() {
+        return temp_f;
+    }
 
-    public double getWindKph() { return windKph; }
-    public void setWindKph(double value) { this.windKph = value; }
+    public void setTemp_f(double temp_f) {
+        this.temp_f = temp_f;
+    }
 
-    public long getWindDegree() { return windDegree; }
-    public void setWindDegree(long value) { this.windDegree = value; }
+    public int getIs_day() {
+        return is_day;
+    }
 
-    public String getWindDir() { return windDir; }
-    public void setWindDir(String value) { this.windDir = value; }
+    public void setIs_day(int is_day) {
+        this.is_day = is_day;
+    }
 
-    public double getPressureMB() { return pressureMB; }
-    public void setPressureMB(double value) { this.pressureMB = value; }
+    public Condition getCondition() {
+        return condition;
+    }
 
-    public double getPressureIn() { return pressureIn; }
-    public void setPressureIn(double value) { this.pressureIn = value; }
+    public void setCondition(Condition condition) {
+        this.condition = condition;
+    }
 
-    public double getPrecipMm() { return precipMm; }
-    public void setPrecipMm(double value) { this.precipMm = value; }
+    public double getWind_mph() {
+        return wind_mph;
+    }
 
-    public double getPrecipIn() { return precipIn; }
-    public void setPrecipIn(double value) { this.precipIn = value; }
+    public void setWind_mph(double wind_mph) {
+        this.wind_mph = wind_mph;
+    }
 
-    public long getHumidity() { return humidity; }
-    public void setHumidity(long value) { this.humidity = value; }
+    public double getWind_kph() {
+        return wind_kph;
+    }
 
-    public long getCloud() { return cloud; }
-    public void setCloud(long value) { this.cloud = value; }
+    public void setWind_kph(double wind_kph) {
+        this.wind_kph = wind_kph;
+    }
 
-    public double getFeelslikeC() { return feelslikeC; }
-    public void setFeelslikeC(double value) { this.feelslikeC = value; }
+    public int getWind_degree() {
+        return wind_degree;
+    }
 
-    public double getFeelslikeF() { return feelslikeF; }
-    public void setFeelslikeF(double value) { this.feelslikeF = value; }
+    public void setWind_degree(int wind_degree) {
+        this.wind_degree = wind_degree;
+    }
 
-    public double getWindchillC() { return windchillC; }
-    public void setWindchillC(double value) { this.windchillC = value; }
+    public String getWind_dir() {
+        return wind_dir;
+    }
 
-    public double getWindchillF() { return windchillF; }
-    public void setWindchillF(double value) { this.windchillF = value; }
+    public void setWind_dir(String wind_dir) {
+        this.wind_dir = wind_dir;
+    }
 
-    public double getHeatindexC() { return heatindexC; }
-    public void setHeatindexC(double value) { this.heatindexC = value; }
+    public double getPressure_mb() {
+        return pressure_mb;
+    }
 
-    public double getHeatindexF() { return heatindexF; }
-    public void setHeatindexF(double value) { this.heatindexF = value; }
+    public void setPressure_mb(double pressure_mb) {
+        this.pressure_mb = pressure_mb;
+    }
 
-    public double getDewpointC() { return dewpointC; }
-    public void setDewpointC(double value) { this.dewpointC = value; }
+    public double getPressure_in() {
+        return pressure_in;
+    }
 
-    public double getDewpointF() { return dewpointF; }
-    public void setDewpointF(double value) { this.dewpointF = value; }
+    public void setPressure_in(double pressure_in) {
+        this.pressure_in = pressure_in;
+    }
 
-    public long getWillItRain() { return willItRain; }
-    public void setWillItRain(long value) { this.willItRain = value; }
+    public double getPrecip_mm() {
+        return precip_mm;
+    }
 
-    public long getChanceOfRain() { return chanceOfRain; }
-    public void setChanceOfRain(long value) { this.chanceOfRain = value; }
+    public void setPrecip_mm(double precip_mm) {
+        this.precip_mm = precip_mm;
+    }
 
-    public long getWillItSnow() { return willItSnow; }
-    public void setWillItSnow(long value) { this.willItSnow = value; }
+    public double getPrecip_in() {
+        return precip_in;
+    }
 
-    public long getChanceOfSnow() { return chanceOfSnow; }
-    public void setChanceOfSnow(long value) { this.chanceOfSnow = value; }
+    public void setPrecip_in(double precip_in) {
+        this.precip_in = precip_in;
+    }
 
-    public double getVisKM() { return visKM; }
-    public void setVisKM(double value) { this.visKM = value; }
+    public int getHumidity() {
+        return humidity;
+    }
 
-    public double getVisMiles() { return visMiles; }
-    public void setVisMiles(double value) { this.visMiles = value; }
+    public void setHumidity(int humidity) {
+        this.humidity = humidity;
+    }
 
-    public double getGustMph() { return gustMph; }
-    public void setGustMph(double value) { this.gustMph = value; }
+    public int getCloud() {
+        return cloud;
+    }
 
-    public double getGustKph() { return gustKph; }
-    public void setGustKph(double value) { this.gustKph = value; }
+    public void setCloud(int cloud) {
+        this.cloud = cloud;
+    }
+
+    public double getFeelslike_c() {
+        return feelslike_c;
+    }
+
+    public void setFeelslike_c(double feelslike_c) {
+        this.feelslike_c = feelslike_c;
+    }
+
+    public double getFeelslike_f() {
+        return feelslike_f;
+    }
+
+    public void setFeelslike_f(double feelslike_f) {
+        this.feelslike_f = feelslike_f;
+    }
+
+    public double getWindchill_c() {
+        return windchill_c;
+    }
+
+    public void setWindchill_c(double windchill_c) {
+        this.windchill_c = windchill_c;
+    }
+
+    public double getWindchill_f() {
+        return windchill_f;
+    }
+
+    public void setWindchill_f(double windchill_f) {
+        this.windchill_f = windchill_f;
+    }
+
+    public double getHeatindex_c() {
+        return heatindex_c;
+    }
+
+    public void setHeatindex_c(double heatindex_c) {
+        this.heatindex_c = heatindex_c;
+    }
+
+    public double getHeatindex_f() {
+        return heatindex_f;
+    }
+
+    public void setHeatindex_f(double heatindex_f) {
+        this.heatindex_f = heatindex_f;
+    }
+
+    public double getDewpoint_c() {
+        return dewpoint_c;
+    }
+
+    public void setDewpoint_c(double dewpoint_c) {
+        this.dewpoint_c = dewpoint_c;
+    }
+
+    public double getDewpoint_f() {
+        return dewpoint_f;
+    }
+
+    public void setDewpoint_f(double dewpoint_f) {
+        this.dewpoint_f = dewpoint_f;
+    }
+
+    public int getWill_it_rain() {
+        return will_it_rain;
+    }
+
+    public void setWill_it_rain(int will_it_rain) {
+        this.will_it_rain = will_it_rain;
+    }
+
+    public int getChance_of_rain() {
+        return chance_of_rain;
+    }
+
+    public void setChance_of_rain(int chance_of_rain) {
+        this.chance_of_rain = chance_of_rain;
+    }
+
+    public int getWill_it_snow() {
+        return will_it_snow;
+    }
+
+    public void setWill_it_snow(int will_it_snow) {
+        this.will_it_snow = will_it_snow;
+    }
+
+    public int getChance_of_snow() {
+        return chance_of_snow;
+    }
+
+    public void setChance_of_snow(int chance_of_snow) {
+        this.chance_of_snow = chance_of_snow;
+    }
+
+    public double getVis_km() {
+        return vis_km;
+    }
+
+    public void setVis_km(double vis_km) {
+        this.vis_km = vis_km;
+    }
+
+    public double getVis_miles() {
+        return vis_miles;
+    }
+
+    public void setVis_miles(double vis_miles) {
+        this.vis_miles = vis_miles;
+    }
+
+    public double getGust_mph() {
+        return gust_mph;
+    }
+
+    public void setGust_mph(double gust_mph) {
+        this.gust_mph = gust_mph;
+    }
+
+    public double getGust_kph() {
+        return gust_kph;
+    }
+
+    public void setGust_kph(double gust_kph) {
+        this.gust_kph = gust_kph;
+    }
 }

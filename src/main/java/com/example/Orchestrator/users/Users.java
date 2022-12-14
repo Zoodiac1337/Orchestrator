@@ -13,13 +13,18 @@ public class Users {
     public Users() {
     }
 
+    public Users(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     public Users(int userID, String username, String password) {
         this.userID = userID;
         this.username = username;
         this.password = password;
     }
 
-    public int getUserID() {
+public int  getUserID() {
         return userID;
     }
 
@@ -51,4 +56,5 @@ public class Users {
                 ", password='" + password + '\'' +
                 '}';
     }
+
 }
