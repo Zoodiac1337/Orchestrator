@@ -1,15 +1,16 @@
 package com.example.Orchestrator.main;
 
 import com.example.Orchestrator.trips.Trips;
+import com.example.Orchestrator.trips.TripsInterest;
 import com.example.Orchestrator.users.Users;
-import com.example.Orchestrator.weather.Day;
+import com.example.Orchestrator.weather.Forecastday;
 import com.example.Orchestrator.weather.Weather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,10 +31,25 @@ public class Controller {
     @GetMapping(path = "trips", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Trips> trips() {return service.getTrips();
     }
+    @GetMapping(path = "tripsInterest", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<TripsInterest> tripsInterest() {return service.getTripsInterest();
+    }
+    @GetMapping(path = "tripsInterestByUserID", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<ArrayList<TripsInterest>> tripsInterestByUserId(@RequestParam int userid) {return service.getTripsInterestByUserID(userid);
+    }
+    @GetMapping(path = "tripsInterestByTripID", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<ArrayList<TripsInterest>> tripsInterestByTripId(@RequestParam int tripid) {return service.getTripsInterestByTripID(tripid);
+    }
     @GetMapping(path = "weather", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Day weather() throws IOException {return Weather.getWeather("Nottingham", LocalDate.of(2023,1,26));}
+    public ArrayList<Forecastday> weather(@RequestParam String location) throws IOException {return Weather.getWeather(location);}
     @GetMapping(path = "tripsByID", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Trips> tripsById(@RequestParam int userid) {return service.getTripsByID(userid);
+    public Optional<ArrayList<Trips>> tripsById(@RequestParam int userid) {return service.getTripsByID(userid);
+    }
+    @GetMapping(path = "tripsByTripID", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<Trips> tripsByTripId(@RequestParam int tripid) {return service.getTripsByTripID(tripid);
+    }
+    @GetMapping(path = "tripsByLocation", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<ArrayList<Trips>> tripsByLocation(@RequestParam String location) {return service.getTripsByLocation(location);
     }
 
 
@@ -48,4 +64,13 @@ public class Controller {
     public void createNewTrip(@RequestBody Trips trips) throws IOException {
         service.addNewTrip(trips);
     }
+    @PostMapping(path = "newTripInterest")
+    public void createNewTripInterest(@RequestBody TripsInterest tripsInterest) throws IOException {
+        service.addNewTripInterest(tripsInterest);
+    }
+    @PostMapping(path = "removeTripInterest")
+    public void removeTripInterest(@RequestBody TripsInterest tripsInterest)  {
+        service.deleteTripInterest(tripsInterest);
+    }
+
 }

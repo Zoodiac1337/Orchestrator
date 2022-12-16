@@ -2,11 +2,14 @@ package com.example.Orchestrator.main;
 
 import com.example.Orchestrator.random.RandomNumber;
 import com.example.Orchestrator.trips.Trips;
+import com.example.Orchestrator.trips.TripsInterest;
+import com.example.Orchestrator.trips.TripsInterestRepository;
 import com.example.Orchestrator.trips.TripsRepository;
 import com.example.Orchestrator.users.Users;
 import com.example.Orchestrator.users.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +18,13 @@ public class Service {
 
     private final UsersRepository usersRepository;
     private final TripsRepository tripsRepository;
+    private final TripsInterestRepository tripsInterestRepository;
 
     @Autowired
-    public Service(UsersRepository usersRepository, TripsRepository tripsRepository) {
+    public Service(UsersRepository usersRepository, TripsRepository tripsRepository, TripsInterestRepository tripsInterestRepository) {
         this.usersRepository = usersRepository;
         this.tripsRepository = tripsRepository;
+        this.tripsInterestRepository =  tripsInterestRepository;
     }
 
     public List<Users> getUsers() {
@@ -47,6 +52,9 @@ public class Service {
     public List<Trips> getTrips() {
         return tripsRepository.findAll();
     }
+    public List<TripsInterest> getTripsInterest() {
+        return tripsInterestRepository.findAll();
+    }
     public void addNewTrip(Trips trips) throws IOException {
         int newTripID = RandomNumber.getRandomNumber(1000000, 9999999);
         Optional<Trips> tripsByTripID = tripsRepository.findTripsByTripID(newTripID);
@@ -68,7 +76,37 @@ public class Service {
             return ("{\"userID\":"+usersByCredentials.get().getUserID()+"}");
     }
 
-    public Optional<Trips> getTripsByID(int userID) {
+    public Optional<ArrayList<Trips>> getTripsByID(int userID) {
         return tripsRepository.findTripsByUserID(userID);
+    }
+
+    public Optional<ArrayList<Trips>> getTripsByLocation(String location) {
+        return tripsRepository.findTripsByLocation(location);
+    }
+
+    public void addNewTripInterest(TripsInterest tripsInterest) {
+        Optional<TripsInterest> interestByTripIDandUserID = tripsInterestRepository.findTripsInterestByTripIDAndUserID(tripsInterest.getTripID(), tripsInterest.getUserID());
+        Optional<Trips> tripByTripIDandUserID = tripsRepository.findTripsByTripIDAndUserID(tripsInterest.getTripID(), tripsInterest.getUserID());
+        if (interestByTripIDandUserID.isPresent() || tripByTripIDandUserID.isPresent()) {
+            throw new IllegalStateException("Interest exists");
+        }
+        else tripsInterestRepository.save(tripsInterest);
+    }
+
+    public Optional<ArrayList<TripsInterest>> getTripsInterestByUserID(int userid) {
+        return tripsInterestRepository.findTripsInterestByUserID(userid);
+    }
+
+    public Optional<ArrayList<TripsInterest>> getTripsInterestByTripID(int tripid) {
+        return tripsInterestRepository.findTripsInterestByTripID(tripid);
+    }
+
+    public Optional<Trips> getTripsByTripID(int tripid) {
+        return tripsRepository.findTripsByTripID(tripid);
+    }
+
+    public void deleteTripInterest(TripsInterest tripsInterest) {
+        TripsInterest interestByTripIDandUserID = tripsInterestRepository.getTripsInterestByTripIDAndUserID(tripsInterest.getTripID(), tripsInterest.getUserID());
+        tripsInterestRepository.delete(interestByTripIDandUserID);
     }
 }

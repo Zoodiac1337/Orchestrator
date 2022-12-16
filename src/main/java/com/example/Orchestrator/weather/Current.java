@@ -1,8 +1,8 @@
 package com.example.Orchestrator.weather;
 
-public class Hour{
-    public int time_epoch;
-    public String time;
+public class Current{
+    public int last_updated_epoch;
+    public String last_updated;
     public double temp_c;
     public double temp_f;
     public int is_day;
@@ -19,36 +19,26 @@ public class Hour{
     public int cloud;
     public double feelslike_c;
     public double feelslike_f;
-    public double windchill_c;
-    public double windchill_f;
-    public double heatindex_c;
-    public double heatindex_f;
-    public double dewpoint_c;
-    public double dewpoint_f;
-    public int will_it_rain;
-    public int chance_of_rain;
-    public int will_it_snow;
-    public int chance_of_snow;
     public double vis_km;
     public double vis_miles;
+    public double uv;
     public double gust_mph;
     public double gust_kph;
-    public double uv;
 
-    public int getTime_epoch() {
-        return time_epoch;
+    public int getLast_updated_epoch() {
+        return last_updated_epoch;
     }
 
-    public void setTime_epoch(int time_epoch) {
-        this.time_epoch = time_epoch;
+    public void setLast_updated_epoch(int last_updated_epoch) {
+        this.last_updated_epoch = last_updated_epoch;
     }
 
-    public String getTime() {
-        return time;
+    public String getLast_updated() {
+        return last_updated;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setLast_updated(String last_updated) {
+        this.last_updated = last_updated;
     }
 
     public double getTemp_c() {
@@ -179,86 +169,6 @@ public class Hour{
         this.feelslike_f = feelslike_f;
     }
 
-    public double getWindchill_c() {
-        return windchill_c;
-    }
-
-    public void setWindchill_c(double windchill_c) {
-        this.windchill_c = windchill_c;
-    }
-
-    public double getWindchill_f() {
-        return windchill_f;
-    }
-
-    public void setWindchill_f(double windchill_f) {
-        this.windchill_f = windchill_f;
-    }
-
-    public double getHeatindex_c() {
-        return heatindex_c;
-    }
-
-    public void setHeatindex_c(double heatindex_c) {
-        this.heatindex_c = heatindex_c;
-    }
-
-    public double getHeatindex_f() {
-        return heatindex_f;
-    }
-
-    public void setHeatindex_f(double heatindex_f) {
-        this.heatindex_f = heatindex_f;
-    }
-
-    public double getDewpoint_c() {
-        return dewpoint_c;
-    }
-
-    public void setDewpoint_c(double dewpoint_c) {
-        this.dewpoint_c = dewpoint_c;
-    }
-
-    public double getDewpoint_f() {
-        return dewpoint_f;
-    }
-
-    public void setDewpoint_f(double dewpoint_f) {
-        this.dewpoint_f = dewpoint_f;
-    }
-
-    public int getWill_it_rain() {
-        return will_it_rain;
-    }
-
-    public void setWill_it_rain(int will_it_rain) {
-        this.will_it_rain = will_it_rain;
-    }
-
-    public int getChance_of_rain() {
-        return chance_of_rain;
-    }
-
-    public void setChance_of_rain(int chance_of_rain) {
-        this.chance_of_rain = chance_of_rain;
-    }
-
-    public int getWill_it_snow() {
-        return will_it_snow;
-    }
-
-    public void setWill_it_snow(int will_it_snow) {
-        this.will_it_snow = will_it_snow;
-    }
-
-    public int getChance_of_snow() {
-        return chance_of_snow;
-    }
-
-    public void setChance_of_snow(int chance_of_snow) {
-        this.chance_of_snow = chance_of_snow;
-    }
-
     public double getVis_km() {
         return vis_km;
     }
@@ -275,6 +185,14 @@ public class Hour{
         this.vis_miles = vis_miles;
     }
 
+    public double getUv() {
+        return uv;
+    }
+
+    public void setUv(double uv) {
+        this.uv = uv;
+    }
+
     public double getGust_mph() {
         return gust_mph;
     }
@@ -289,13 +207,5 @@ public class Hour{
 
     public void setGust_kph(double gust_kph) {
         this.gust_kph = gust_kph;
-    }
-
-    public double getUv() {
-        return uv;
-    }
-
-    public void setUv(double uv) {
-        this.uv = uv;
     }
 }
